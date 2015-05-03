@@ -37,7 +37,7 @@ Anytime, if you need further assistance and support, don't hesitate to drop us c
 
 <h4>Review</h4>
 
-Wether you found a terrible bug, or you liked this plugin and you wanted to say thanks, or you have a suggestion you want us to release in future updates, please consider leaving your feedbacks and reviews in the plugin a href="http://wordpress.org/support/view/plugin-reviews/top-shared-posts-on-facebook">reviews page</a>.
+Wether you found a terrible bug, or you liked this plugin and you wanted to say thanks, or you have a suggestion you want us to release in future updates, please consider leaving your feedbacks and reviews in the plugin <a href="http://wordpress.org/support/view/plugin-reviews/top-shared-posts-on-facebook">reviews page</a>.
 
 Thanks a lot!
 
