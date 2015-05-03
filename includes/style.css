@@ -1,0 +1,97 @@
+/* Top shared posts on Facebook Plug-in CSS - By Samuel Elh ( sam at elegance-style.com )*/
+
+#tspf * {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	box-sizing: border-box;
+	position: relative;
+}
+#tspf strong {
+	font-weight: bold;
+}
+#tspf ul {
+
+}
+#tspf ul li {
+	padding: .5em .1em;
+	border-bottom: 1px solid #D8D8D8;
+	clear: both;
+	width: 100%;
+	list-style: none!important;
+	overflow: hidden!important;
+}
+#tspf ul li:before {
+	content: none!important;
+}
+#tspf ul li a.tspf-avatar {
+	display: inline-block;
+	position: relative;
+	float: left;
+	max-width: 26%;
+	padding-left: 1em;
+}
+#tspf ul li a.tspf-avatar:before {
+	position: absolute;
+	z-index: 1;
+	background: #fff;
+	color: #000;
+	border: 1px solid #BBB;
+	line-height: 1.4;
+	padding: 0 0.3em;
+	margin: 1.6em 0 0 -1em;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	max-width: 100%;
+	float: left;
+	margin: 27% -17%;
+}
+#tspf ul li a.tspf-avatar img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #fff;
+	padding: 2px;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	position: relative;
+}
+#tspf ul li div.tspf-link {
+	width: 73%;
+	position: relative;
+	float: left;
+	padding-left: 0.5em;
+}
+#tspf ul li div.tspf-link a {
+
+}
+#tspf ul li div.tspf-link span {
+
+}
+#tspf-loading {
+	padding: 1em;
+}
+#tspf-loading img {
+	margin-bottom: -0.35em;
+}
+#tspf .tspf-msg {
+    /* padding-top: 1em; */
+}
+#tspf br {
+    clear: both;
+}
+#tspf .tspf-count {
+    color: #808080;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 400px) {
+	#tspf ul li div.tspf-link {
+		padding-left: 1.33em;
+	}
+}
+@media screen and (max-width: 200px) {
+	#tspf ul li div.tspf-link {
+		padding-left: 2em;
+	}
+}
