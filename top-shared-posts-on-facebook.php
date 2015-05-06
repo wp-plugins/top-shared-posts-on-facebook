@@ -4,7 +4,7 @@
 Plugin Name: Top Shared Posts on Facebook
 Description: Top shared posts on Facebook fetches total share counts for your blog posts on Facebook using Facebook Graph API and sorts the most shared ones in an ascending order together with their total share counts.
 Author: Samuel Elh
-Version: 0.1.1
+Version: 0.1.2
 Author URI: https://profiles.wordpress.org/elhardoum
 */
 
@@ -123,7 +123,7 @@ if ($('ul.tspf-cont > li.count').length) {
 			$x_display = $x;
 			$x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
 			$x_display .= $x_parts[$x_count_parts - 1];
-			return  $x_display. $id;
+			return  $x_display;
 		}
 
 	}
