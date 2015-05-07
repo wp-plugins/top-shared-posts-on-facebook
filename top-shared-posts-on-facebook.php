@@ -4,7 +4,7 @@
 Plugin Name: Top Shared Posts on Facebook
 Description: Top shared posts on Facebook fetches total share counts for your blog posts on Facebook using Facebook Graph API and sorts the most shared ones in an ascending order together with their total share counts.
 Author: Samuel Elh
-Version: 0.1.2
+Version: 0.1.3
 Author URI: https://profiles.wordpress.org/elhardoum
 */
 
@@ -102,15 +102,18 @@ if ($('ul.tspf-cont > li.count').length) {
 <?php
 }
 
-	function short_count($data) {
+	function simple_count($data) {
 		$id = get_the_ID();
-		$json_data = get_transient( 'tspf_cache_'. $id .'_tr' );
+		$json_data = get_transient( 'tspf_cache_count_'. $id .'_tr' );
 			if ($json_data === false) {
 				$json = file_get_contents( 'http://api.facebook.com/restserver.php?method=links.getStats&format=json&urls=' . $data . '&pretty=1' );
 				$json_data = json_decode($json, true);
-				set_transient( 'tspf_cache_'. $id .'_tr', $json_data, 3600 );
+				set_transient( 'tspf_cache_count_'. $id .'_tr', $json_data, 3600 );
 			}
-		$num = $json_data[0]['total_count'];
+		return $json_data[0]['total_count'];
+	}
+	function tspf_count($data) {
+		$num = simple_count($data);
 		if(empty ($num) ) {
 			return 'n/a';
 		} else {
@@ -125,7 +128,6 @@ if ($('ul.tspf-cont > li.count').length) {
 			$x_display .= $x_parts[$x_count_parts - 1];
 			return  $x_display;
 		}
-
 	}
 	function tspf_hide_empty($data) {
 		if ( $data == "n/a" ) return 'na';
@@ -184,11 +186,11 @@ function tspf_data($wp_head) {
 					$img = tspf_img();
 					$title = get_the_title();
 					$id = get_the_ID();
-					$short_count = short_count($link);
+					$short_count = tspf_count($link);
 					$hide_empty = tspf_hide_empty($short_count);
 					
 					echo '
-					<li id="'. $short_count . '" class="tspf-'. $id . ' ' . $hide_empty . '"> 
+					<li id="'. simple_count($link) . '" class="tspf-'. $id . ' ' . $hide_empty . '"> 
 						<a href="'. $link .'" title="This post was shared ' . $short_count . ' times" class="tspf-avatar">
 							<style type="text/css">#tspf ul li.tspf-' . $id . ' a.tspf-avatar:before { content: "'. $short_count . '"; }</style>
 							<img src="' . plugin_dir_url( __FILE__ ) . 'includes/pixel.gif' . '" style="background-image: url('. $img .');" height="60" width="60" alt="'. $title .'" />

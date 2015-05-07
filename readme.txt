@@ -3,7 +3,7 @@ Contributors: elhardoum
 Tags: Facebook, count, social, popular, widget, posts, share, social share, top, top-posts, popular-posts, facebook-shares, count-shares, count-shares, social-widgets, social-plugins
 Requires at least: 3.0.1
 Tested up to: 4.2.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,3 +77,6 @@ You are seeing this message because:
 
 = 0.1.2 =
 * Fixed a social share count bug
+
+= 0.1.3 =
+* Fixed a sorting bug in share count, thanks to <a href="https://profiles.wordpress.org/deprims/">deprims</a> who has reported it !!
